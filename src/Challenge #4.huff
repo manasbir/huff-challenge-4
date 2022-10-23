@@ -1,0 +1,19 @@
+#define macro MAIN() = takes (0) returns (0) {
+    // want a loop that runs for calldatasize amount of times
+    // adds one for the mstore8
+    // minus one for the byte to reverse
+    // requires balancing two stack items
+
+    // option 2:
+    // start from the back and upload one byte at a time
+    // and push the byte to the back in memory
+
+    // this chunk mstores the lsb into mem at 0x00
+    calldataload
+    returndatasize
+    mstore8
+
+    // time to loop
+    // set up the loop with 0 and calldatasize
+
+}
